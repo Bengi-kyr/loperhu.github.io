@@ -158,6 +158,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="spring-Spring_Bean_Lifecycle" class="article article-type-spring  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/25/Spring_Bean_Lifecycle/">Spring Bean 生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/25/Spring_Bean_Lifecycle/" class="archive-article-date">
+  	<time datetime="2019-10-25T06:03:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="生命周期流程图"><a href="#生命周期流程图" class="headerlink" title="生命周期流程图"></a>生命周期流程图</h4><img src="/2019/10/25/Spring_Bean_Lifecycle/spring-bean-lifecycle.png" class="" title="Spring Bean 生命周期">
+        
+          <a class="article-more-a" href="/2019/10/25/Spring_Bean_Lifecycle/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Bean</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Lifecycle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/25/Spring_Bean_Lifecycle/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Spring_AOP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -208,44 +288,9 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="AOP类型"><a href="#AOP类型" class="headerlink" title="AOP类型"></a>AOP类型</h4><ul>
-<li>静态AOP<blockquote>
-<p>静态AOP,如AspectJ编译时织入机制提供的静态AOP,横切逻辑将在编译时应用于代码,如果想修改逻辑,必须修改代码并重新编译.</p>
-</blockquote>
-</li>
-<li>动态AOP<blockquote>
-<p>动态AOP,横切逻辑在运行时动态运用,可以更改配置而无需编译代码.</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="Spring-AOP架构-代理"><a href="#Spring-AOP架构-代理" class="headerlink" title="Spring AOP架构 [代理]"></a>Spring AOP架构 [代理]</h4><h5 id="Spring代理类型"><a href="#Spring代理类型" class="headerlink" title="Spring代理类型"></a>Spring代理类型</h5><ul>
-<li>JDK动态代理(仅支持接口代理)<blockquote>
-<p>默认情况下,当被通知的目标对象实现一个接口时,Spring将使用JDK动态代理来创建目标对象的代理实例.</p>
-</blockquote>
-</li>
-<li>CGLIB动态代理<blockquote>
-<p>当被通知的目标对象没有实现接口,也就是对象本身时一个具体类,将使用CGLIB创建代理实例.</p>
-</blockquote>
-</li>
-</ul>
-<h5 id="Spring连接点"><a href="#Spring连接点" class="headerlink" title="Spring连接点"></a>Spring连接点</h5><blockquote>
-<p>Spring AOP最明显的简化是只支持一种连接点类型:方法调用.</p>
-</blockquote>
-<h5 id="Spring切面"><a href="#Spring切面" class="headerlink" title="Spring切面"></a>Spring切面</h5><blockquote>
-<p>切面由实现了Advisor接口的类的实例表示.Spring提供了可以在应用程序中重复使用的、便捷的Advisor实现,从而无需创建自定义的Advisor实现.Advisor有两个子接口:PointcutAdvisor和IntroductionAdvisor.所有的Advisor都实现了PointcutAdvisor接口,这些实现使用切入点来控制应用于连接点的通知.在Spring中,引言被视为特殊类型的通知,通过使用IntroductionAdvisor接口,可以控制将引言引用于哪些类.</p>
-</blockquote>
-<h5 id="Spring通知类型"><a href="#Spring通知类型" class="headerlink" title="Spring通知类型"></a>Spring通知类型</h5><ul>
-<li>前置通知[org.springframework.aop.MethodBeforeAdvice]<blockquote>
-<p>修改传递给方法的参数、抛出异常阻止方法执行.</p>
-</blockquote>
-</li>
-<li>后置返回通知[org.springframework.aop.AfterReturningAdvice]  </li>
-<li>后置通知[org.springframework.aop.AfterAdvice]  </li>
-<li>环绕通知[org.aopalliance.intercept.MethodInterceptor]  </li>
-<li>异常通知[org.springframework.aop.ThrowsAdvice]  </li>
-<li>引入通知[org.springframework.aop.IntroductionInterceptor]  </li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/10/25/Spring_AOP/#more">more >></a>
+        
       
 
       
@@ -273,99 +318,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/25/Spring_AOP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="spring-Spring_Bean_Lifecycle" class="article article-type-spring  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/Spring_Bean_Lifecycle/">Spring Bean 生命周期</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/Spring_Bean_Lifecycle/" class="archive-article-date">
-  	<time datetime="2019-10-25T06:03:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="生命周期流程图"><a href="#生命周期流程图" class="headerlink" title="生命周期流程图"></a>生命周期流程图</h4><img src="/2019/10/25/Spring_Bean_Lifecycle/spring-bean-lifecycle.png" class="" title="Spring Bean 生命周期">
-
-<h4 id="接口方法分类"><a href="#接口方法分类" class="headerlink" title="接口方法分类"></a>接口方法分类</h4><h5 id="Bean自身的方法"><a href="#Bean自身的方法" class="headerlink" title="Bean自身的方法"></a>Bean自身的方法</h5><ul>
-<li>Bean自身调用的方法</li>
-<li>通过配置或者注解定义的init和destroy方法<h5 id="Bean级生命周期接口方法"><a href="#Bean级生命周期接口方法" class="headerlink" title="Bean级生命周期接口方法"></a>Bean级生命周期接口方法</h5></li>
-<li>BeanFactoryAware接口</li>
-<li>BeanNameAware接口</li>
-<li>ApplicationContextAware接口</li>
-<li>InitializingBean接口</li>
-<li>DiposableBean接口</li>
-<li>其他接口<h5 id="容器级生命周期接口方法"><a href="#容器级生命周期接口方法" class="headerlink" title="容器级生命周期接口方法"></a>容器级生命周期接口方法</h5></li>
-<li>BeanPostProcessor接口实现</li>
-<li>InstantiationAwareBeanPostProcessor接口实现(本身为BeanPostProcessor的子类)</li>
-<li>其他接口实现<h5 id="工厂级生命周期接口方法"><a href="#工厂级生命周期接口方法" class="headerlink" title="工厂级生命周期接口方法"></a>工厂级生命周期接口方法</h5></li>
-<li>BeanFactoryPostProcessor接口的实现类</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Bean</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Lifecycle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/Spring_Bean_Lifecycle/">展开全文 >></a>
         </p>
       
 
@@ -472,19 +424,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bean</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Lifecycle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AOP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Bean</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Lifecycle</a>
               </li>
             
             <div class="clearfix"></div>
